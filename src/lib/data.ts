@@ -13,7 +13,7 @@ export const projects = [
     title: "AI-Powered Root Cause Analysis Tool (Internship)",
     description: "Developed a tool that leverages AI to identify the root cause of system failures.",
     tech: ["Python", "Dify", "Kubernetes"],
-    status: "In Progress"
+    status: "Completed"
   },
   {
     title: "Personal Portfolio Website",
@@ -22,19 +22,19 @@ export const projects = [
     status: "Completed"
   },
   {
-    title: "Researdh Assistant",
+    title: "Research Assistant",
     description: "Surveyed and implemented several RAG system",
-    tech: [],
-    status: "Completed"
+    tech: ["Python"],
+    status: "In Progress"
   }
 ];
 
 export const education = [
   {
-    period: "2024 - Present",
+    period: "2025 - Present",
     title: "Master's Degree in Computer Science",
     institution: "Institute of Science Tokyo",
-    description: "Specializing in building Large Language Models. GPA: 3.2/4.5",
+    description: "Specializing in building Large Language Models. GPA: 3.3/4.0",
     status: "In Progress"
   },
   {
@@ -54,8 +54,15 @@ export const education = [
 ];
 
 export const experience = [
+    {
+    period: "2025 August - Current",
+    title: "Research Intern",
+    company: "AI startup in Tokyo",
+    description: "Research about RAG system. Implemented several RAG systems and evaluated their performance.",
+    technologies: ["Python", "Pytorch"]
+  },
   {
-    period: "2024 August - September",
+    period: "2025 August - September",
     title: "Data Scientist Intern",
     company: "IT Company in Tokyo",
     description: "Developing AI-powered solutions for enterprise clients. Led the development of a root cause analysis tool using advanced ML techniques.",
@@ -69,3 +76,10 @@ export const experience = [
     technologies: ["Python", "HTML", "CSS", "JavaScript"]
   }
 ];
+
+export const socialLinks = {
+  twitter: {
+    url: "https://twitter.com/knt_master",
+    message: "Hello! I'm interested in working with you on AI/ML projects."
+  }
+};

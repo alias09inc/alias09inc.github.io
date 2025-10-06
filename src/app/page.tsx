@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useState, useEffect } from "react";
-import { skills, projects, education, experience } from "@/lib/data";
+import { skills, projects, education, experience, socialLinks } from "@/lib/data";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -64,6 +64,20 @@ export default function Home() {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
+  };
+
+  const handleGetInTouch = () => {
+    const twitterUrl = socialLinks.twitter.url;
+    const message = encodeURIComponent(socialLinks.twitter.message);
+    const fullUrl = `${twitterUrl}?text=${message}`;
+    window.open(fullUrl, '_blank');
+  };
+
+  const handleSendMessage = () => {
+    const twitterUrl = socialLinks.twitter.url;
+    const message = encodeURIComponent(socialLinks.twitter.message);
+    const fullUrl = `${twitterUrl}?text=${message}`;
+    window.open(fullUrl, '_blank');
   };
 
   return (
@@ -173,10 +187,10 @@ export default function Home() {
             `}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
+            <Button size="lg" className="text-lg px-8" onClick={() => scrollToSection('projects')}>
               View My Work
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8">
+            <Button variant="outline" size="lg" className="text-lg px-8" onClick={handleGetInTouch}>
               Get In Touch
             </Button>
           </div>
@@ -307,11 +321,8 @@ export default function Home() {
           </CardHeader>
           <CardContent>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">
+              <Button size="lg" onClick={handleSendMessage}>
                 Send Message
-              </Button>
-              <Button variant="outline" size="lg">
-                Download Resume
               </Button>
             </div>
           </CardContent>
