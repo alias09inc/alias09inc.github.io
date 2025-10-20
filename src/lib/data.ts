@@ -7,25 +7,36 @@ export const projects = [
     title: "Bachelor's Thesis",
     description: "Research about bias mitigation in Large Language Models",
     tech: ["Python", "Pytorch", "Pandas"],
-    status: "Completed"
+    status: "Completed",
+    github: undefined
   },
   {
     title: "AI-Powered Root Cause Analysis Tool (Internship)",
     description: "Developed a tool that leverages AI to identify the root cause of system failures.",
     tech: ["Python", "Dify", "Kubernetes"],
-    status: "Completed"
+    status: "Completed",
+    github: undefined
   },
   {
     title: "Personal Portfolio Website",
     description: "A modern, responsive portfolio website to showcase my projects and skills.",
     tech: ["Next.js", "Tailwind CSS", "TypeScript"],
-    status: "Completed"
+    status: "Completed",
+    github: undefined
   },
   {
     title: "Research Assistant",
     description: "Surveyed and implemented several RAG system",
     tech: ["Python"],
-    status: "In Progress"
+    status: "In Progress",
+    github: undefined
+  },
+  {
+    title: "SerenSpot",
+    description: "Web application that enables user to discover work spot by serendipity and share their favorite work spots.",
+    tech: ["React", "Node.js", "CockroachDB", "Prisma"],
+    status: "Completed",
+    github: "https://github.com/jphacks/tk_b_2509"
   }
 ];
 
