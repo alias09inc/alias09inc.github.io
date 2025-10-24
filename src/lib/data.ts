@@ -92,5 +92,14 @@ export const socialLinks = {
   twitter: {
     url: "https://twitter.com/knt_master",
     message: "Hello! I'm interested in working with you on AI/ML projects."
+  },
+  github: {
+    url: "https://github.com/alias09inc"
+  },
+  linkedin: {
+    url: "https://www.linkedin.com/in/kentaroshinagawa/?locale=en_US"
+  },
+  note: {
+    url: "https://note.com/knt_master"
   }
 };
