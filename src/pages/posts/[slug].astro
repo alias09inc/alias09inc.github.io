@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+	<article>
+		<header>
+			<p class="eyebrow">{post.data.pubDate.toLocaleDateString('ja-JP')}</p>
+			<h1>{post.data.title}</h1>
+			<p class="description">{post.data.description}</p>
+		</header>
+		<div class="content">
+			<Content />
+		</div>
+	</article>
+	<a class="back" href="/">← 記事一覧へ戻る</a>
+</Layout>
+
+<style>
+	article {
+		background: white;
+		padding: 32px;
+		border-radius: 16px;
+		border: 1px solid #e2e8f0;
+	}
+
+	.eyebrow {
+		font-size: 0.9rem;
+		color: #64748b;
+		margin-bottom: 8px;
+	}
+
+	h1 {
+		margin: 0 0 12px;
+		font-size: 2rem;
+	}
+
+	.description {
+		color: #475569;
+		margin-bottom: 24px;
+	}
+
+	.content :global(h2) {
+		margin-top: 32px;
+	}
+
+	.content :global(p) {
+		margin-bottom: 16px;
+	}
+
+	.back {
+		display: inline-block;
+		margin-top: 24px;
+		color: #2563eb;
+	}
+</style>
