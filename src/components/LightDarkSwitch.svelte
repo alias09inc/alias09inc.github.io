@@ -11,9 +11,6 @@ import {
 import { onMount } from "svelte";
 import type { LIGHT_DARK_MODE } from "@/types/config.ts";
 
-// Define props type for Astro compatibility
-type $$Props = {};
-
 const seq: LIGHT_DARK_MODE[] = [LIGHT_MODE, DARK_MODE, AUTO_MODE];
 let mode: LIGHT_DARK_MODE = AUTO_MODE;
 
