@@ -1,7 +1,7 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+Hello, I'm Kent. This is my personal blog site. If you are interested my portfolio, please visit [my portfolio site](https://www.alias09.com).
 
-::github{repo="saicaca/fuwari"}
+::github{repo="alias09inc/alias09inc.github.io"}
 
 > ### Sources of images used in this site
 > - [Unsplash](https://unsplash.com/)
