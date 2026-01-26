@@ -19,7 +19,7 @@ lang: 'ja'
 
 けれど、今作は公開前にメインキャラクターによる歌ってみたがすでにYouTubeに投稿されています。
 
-<iframe width="100%" height="468" src="https://www.youtube.com/watch?v=f7zTgwIDyVU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f7zTgwIDyVU?si=QFXxauwTwdpwb4l5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 そしてその曲を聞いたことがある人、もしくはryoのようなコンポーザーを知っている人は少なからず興味を惹かれたと思います。かくいう私もSupercellやEGOISTが大好きな人だったのでPVを見て絶対に見なきゃ！と確信した記憶があります。
 
