@@ -1,43 +1,79 @@
-import { title } from "process";
+export type ProjectIcon =
+  | "brain"
+  | "search"
+  | "globe"
+  | "flask"
+  | "map-pin";
 
-export const skills = ["C++", "Python", "Pytorch", "Go", "LangChain", "Kubernetes", "Docker"];
+export const skillCategories = [
+  {
+    name: "Languages",
+    skills: ["C++", "Python", "Go"],
+  },
+  {
+    name: "AI / ML",
+    skills: ["Pytorch", "LangChain"],
+  },
+  {
+    name: "Infrastructure",
+    skills: ["Kubernetes", "Docker"],
+  },
+];
 
 export const projects = [
   {
     title: "Bachelor's Thesis",
     description: "Research about bias mitigation in Large Language Models",
     tech: ["Python", "Pytorch", "Pandas"],
-    status: "Completed",
-    github: undefined
+    status: "Completed" as const,
+    github: undefined,
+    gradient: "from-violet-600 to-indigo-700",
+    icon: "brain" as ProjectIcon,
+    featured: true,
   },
   {
     title: "AI-Powered Root Cause Analysis Tool (Internship)",
-    description: "Developed a tool that leverages AI to identify the root cause of system failures.",
+    description:
+      "Developed a tool that leverages AI to identify the root cause of system failures.",
     tech: ["Python", "Dify", "Kubernetes"],
-    status: "Completed",
-    github: undefined
+    status: "Completed" as const,
+    github: undefined,
+    gradient: "from-indigo-600 to-blue-700",
+    icon: "search" as ProjectIcon,
+    featured: false,
   },
   {
     title: "Personal Portfolio Website",
-    description: "A modern, responsive portfolio website to showcase my projects and skills.",
+    description:
+      "A modern, responsive portfolio website to showcase my projects and skills.",
     tech: ["Next.js", "Tailwind CSS", "TypeScript"],
-    status: "Completed",
-    github: undefined
+    status: "Completed" as const,
+    github: undefined,
+    gradient: "from-purple-600 to-violet-700",
+    icon: "globe" as ProjectIcon,
+    featured: false,
   },
   {
     title: "Research Assistant",
     description: "Surveyed and implemented several RAG system",
     tech: ["Python"],
-    status: "In Progress",
-    github: undefined
+    status: "In Progress" as const,
+    github: undefined,
+    gradient: "from-fuchsia-600 to-purple-700",
+    icon: "flask" as ProjectIcon,
+    featured: false,
   },
   {
     title: "SerenSpot",
-    description: "Web application that enables user to discover work spot by serendipity and share their favorite work spots.",
+    description:
+      "Web application that enables user to discover work spot by serendipity and share their favorite work spots.",
     tech: ["React", "Node.js", "CockroachDB", "Prisma"],
-    status: "Completed",
-    github: "https://github.com/jphacks/tk_b_2509"
-  }
+    status: "Completed" as const,
+    github: "https://github.com/jphacks/tk_b_2509",
+    gradient: "from-cyan-600 to-indigo-700",
+    icon: "map-pin" as ProjectIcon,
+    featured: false,
+  },
 ];
 
 export const education = [
@@ -45,61 +81,77 @@ export const education = [
     period: "2025 - Present",
     title: "Master's Degree in Computer Science",
     institution: "Institute of Science Tokyo",
-    description: "Specializing in building Large Language Models. GPA: 3.3/4.0",
-    status: "In Progress"
+    description:
+      "Specializing in building Large Language Models. GPA: 3.3/4.0",
+    status: "In Progress" as const,
   },
   {
     period: "2020 - 2025",
     title: "Bachelor's Degree in Computer Science",
     institution: "The University of Electro-Communications, Tokyo",
-    description: "Major in Management and Social Information. Especially focused on Statistics and Machine Lerning.",
-    status: "Completed"
+    description:
+      "Major in Management and Social Information. Especially focused on Statistics and Machine Lerning.",
+    status: "Completed" as const,
   },
   {
     period: "2022 Sep - 2023 Aug",
     title: "Exchange Student in Digital Media",
     institution: "Universitat Bremen, Germany",
-    description: "Studied abroad for one year, focusing on advanced computer science topics and bussiness planning.",
-    status: "Completed"
-  }
+    description:
+      "Studied abroad for one year, focusing on advanced computer science topics and bussiness planning.",
+    status: "Completed" as const,
+  },
 ];
 
 export const experience = [
-    {
+  {
     period: "2025 August - Current",
     title: "Research Intern",
     company: "AI startup in Tokyo",
-    description: "Research about RAG system. Implemented several RAG systems and evaluated their performance.",
-    technologies: ["Python", "Pytorch"]
+    description:
+      "Research about RAG system. Implemented several RAG systems and evaluated their performance.",
+    technologies: ["Python", "Pytorch"],
   },
   {
     period: "2025 August - September",
     title: "Data Scientist Intern",
     company: "IT Company in Tokyo",
-    description: "Developing AI-powered solutions for enterprise clients. Led the development of a root cause analysis tool using advanced ML techniques.",
-    technologies: ["Python", "Kubernetes", "Dify"]
+    description:
+      "Developing AI-powered solutions for enterprise clients. Led the development of a root cause analysis tool using advanced ML techniques.",
+    technologies: ["Python", "Kubernetes", "Dify"],
   },
   {
     period: "2023 Dec - 2025 Jul",
     title: "Teaching Assistant and Programming Tutor",
     company: "N high School",
-    description: "Helped high school students understand programming concepts and maintained company systems.",
-    technologies: ["Python", "HTML", "CSS", "JavaScript"]
-  }
+    description:
+      "Helped high school students understand programming concepts and maintained company systems.",
+    technologies: ["Python", "HTML", "CSS", "JavaScript"],
+  },
 ];
+
+export const navItems = [
+  { id: "hero", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+  { id: "education", label: "Education" },
+  { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
+] as const;
 
 export const socialLinks = {
   twitter: {
     url: "https://twitter.com/knt_master",
-    message: "Hello! I'm interested in working with you on AI/ML projects."
+    message:
+      "Hello! I'm interested in working with you on AI/ML projects.",
   },
   github: {
-    url: "https://github.com/alias09inc"
+    url: "https://github.com/alias09inc",
   },
   linkedin: {
-    url: "https://www.linkedin.com/in/kentaroshinagawa/?locale=en_US"
+    url: "https://www.linkedin.com/in/kentaroshinagawa/?locale=en_US",
   },
   note: {
-    url: "https://note.com/knt_master"
-  }
+    url: "https://note.com/knt_master",
+  },
 };
