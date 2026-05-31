@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Github, Linkedin } from "lucide-react";
+import { GitHubIcon, LinkedInIcon } from "@/components/brand-icons";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { socialLinks } from "@/lib/data";
@@ -41,7 +41,7 @@ export function SiteFooter() {
               onClick={() => window.open(socialLinks.linkedin.url, "_blank")}
               title="LinkedIn"
             >
-              <Linkedin className="h-4 w-4" />
+              <LinkedInIcon className="h-4 w-4" />
             </Button>
             <Button
               variant="outline"
@@ -50,7 +50,7 @@ export function SiteFooter() {
               onClick={() => window.open(socialLinks.github.url, "_blank")}
               title="GitHub"
             >
-              <Github className="h-4 w-4" />
+              <GitHubIcon className="h-4 w-4" />
             </Button>
             <Button
               variant="outline"
