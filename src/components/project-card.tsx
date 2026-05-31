@@ -3,12 +3,12 @@
 import {
   Brain,
   FlaskConical,
-  Github,
   Globe,
   MapPin,
   Search,
   type LucideIcon,
 } from "lucide-react";
+import { GitHubIcon } from "@/components/brand-icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -90,7 +90,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
             className="w-full"
             onClick={() => window.open(project.github, "_blank")}
           >
-            <Github className="mr-2 h-4 w-4" />
+            <GitHubIcon className="mr-2 h-4 w-4" />
             GitHub
           </Button>
         )}

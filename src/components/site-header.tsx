@@ -1,6 +1,6 @@
 "use client";
 
-import { Github } from "lucide-react";
+import { GitHubIcon } from "@/components/brand-icons";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "@/components/mobile-nav";
@@ -61,7 +61,7 @@ export function SiteHeader({ activeSection, onNavigate }: SiteHeaderProps) {
             onClick={() => window.open(socialLinks.github.url, "_blank")}
             title="GitHub"
           >
-            <Github className="h-4 w-4" />
+            <GitHubIcon className="h-4 w-4" />
           </Button>
           <ThemeToggle />
           <MobileNav activeSection={activeSection} onNavigate={onNavigate} />
