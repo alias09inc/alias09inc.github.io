@@ -8,7 +8,10 @@ import rehypeKatex from "rehype-katex";
 const require = createRequire(import.meta.url);
 const rendererRequire = createRequire(require.resolve("rehype-katex"));
 const rendererKatex = rendererRequire("katex");
-const stylesheet = readFileSync(require.resolve("katex/dist/katex.css"), "utf8");
+const stylesheet = readFileSync(
+	require.resolve("katex/dist/katex.css"),
+	"utf8",
+);
 
 test("the KaTeX stylesheet and rehype renderer use the same version", () => {
 	assert.equal(
@@ -56,7 +59,10 @@ for (const [mode, expression] of [
 		const hasClass = (node, name) => node.properties?.className?.includes(name);
 		assert.ok(rendered.some((node) => node.tagName === "math"));
 		assert.ok(rendered.some((node) => hasClass(node, "katex-html")));
-		assert.equal(rendered.some((node) => hasClass(node, "katex-error")), false);
+		assert.equal(
+			rendered.some((node) => hasClass(node, "katex-error")),
+			false,
+		);
 
 		// KaTeX 0.18 renamed these layout classes. A successful Astro build
 		// alone cannot detect HTML rendered by 0.16 paired with newer CSS.
