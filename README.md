@@ -55,6 +55,15 @@ CIとデプロイは `.node-version` に指定したNode.js 24.22.1を使用し�
 
 `pnpm.overrides` は、`rehype-katex` のレンダラーと読み込むKaTeX CSSのバージョン、およびAstro内部と直接依存のSharpを揃えています。ビルド時はコンテンツキャッシュを再生成し、依存更新前の数式HTMLが残ることを防ぎます。更新時は数式テストと画像最適化を含むビルドを確認してください。
 
+Astro 7では `src/content.config.ts` のContent Layer APIを使います。記事URLはこれまでのslugと同じ `entry.id` で生成します。数式・注釈・コードブロック用のremark/rehypeプラグインを維持するため、Markdown処理系は `@astrojs/markdown-remark` の `unified()` を指定しています。Tailwind 3はPostCSSから読み込みます。
+
+### 依存関係のセキュリティ対応
+
+- `esbuild` と `postcss-selector-parser` は修正版をoverrideで指定します。後者はTailwind 3/typographyが要求する旧メジャーから7.1.7以降へ移しているため、更新時は通常ビルドに加えて生成CSSとダークモード表示を確認してください。
+- `@swup/plugin@3.0.1` の `microbundle` は、配布済みのSwupプラグインを動かすためには不要な、プラグイン開発者用ビルドツールです。この依存だけを除外し、旧 `serialize-javascript` などを持ち込まないようにしています。`swup-plugin` 開発用CLIはこのサイトでは使用しません。
+- `braces@3.0.3` の [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm) には公開済みの修正版がありません。`patches/braces@3.0.3.patch` は、MITライセンスの [上流PR #72](https://github.com/micromatch/braces/pull/72)（未マージ、コミット `28d440b5dd449dbf1fe6f3506cf94ecca4d02660`）から実行コードの変更を採用したローカル緩和策です。パターンとASTの深さを100に制限し、循環する親参照も検出します。Tailwind経由のchokidar/micromatchの両方で、深い入力の拒否と通常のファイルパターンを `pnpm test` で確認します。
+- パッチを適用してもパッケージのバージョンは3.0.3のため、`pnpm audit` のbraces指摘は残ります。監査の除外設定は設けていません。上流修正版の公開、またはTailwind更新によって依存が不要になった時点でパッチを見直してください。この静的サイトではbracesはビルド時のファイル検索に使われ、訪問者の入力を受け取るサーバーでは実行しません。
+
 1. `astro.config.mjs` の `site` を自分のGitHub Pages URLに変更します。
    - 例: `https://<YOUR_GITHUB_NAME>.github.io/`
 2. GitHub リポジトリで **Settings → Pages** を開き、Source を **GitHub Actions** に設定します。

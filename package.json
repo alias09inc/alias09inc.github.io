@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "check": "astro check",
-    "test": "node --test scripts/math-compatibility.test.mjs",
+    "test": "node --test scripts/*.test.mjs",
     "build": "astro build --force && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
@@ -17,14 +17,14 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/markdown-remark": "^7.3.4",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
-    "@astrojs/svelte": "7.2.5",
-    "@astrojs/tailwind": "^6.0.2",
-    "@expressive-code/core": "^0.44.2",
-    "@expressive-code/plugin-collapsible-sections": "^0.44.2",
-    "@expressive-code/plugin-line-numbers": "^0.44.2",
+    "@astrojs/svelte": "9.1.1",
+    "@expressive-code/core": "^0.44.3",
+    "@expressive-code/plugin-collapsible-sections": "^0.44.3",
+    "@expressive-code/plugin-line-numbers": "^0.44.3",
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@fontsource/roboto": "^5.3.0",
     "@iconify-json/fa6-brands": "^1.2.6",
@@ -34,14 +34,14 @@
     "@iconify/svelte": "^4.2.0",
     "@swup/astro": "^1.8.0",
     "@tailwindcss/typography": "^0.5.20",
-    "astro": "5.18.2",
-    "astro-expressive-code": "^0.44.2",
+    "astro": "7.4.2",
+    "astro-expressive-code": "^0.44.3",
     "astro-icon": "^1.2.0",
     "hastscript": "^9.0.1",
     "katex": "0.19.0",
     "markdown-it": "^14.3.3",
     "mdast-util-to-string": "^4.0.0",
-    "overlayscrollbars": "^2.16.0",
+    "overlayscrollbars": "^2.17.0",
     "pagefind": "^1.5.2",
     "photoswipe": "^5.4.4",
     "reading-time": "^1.5.0",
@@ -70,6 +70,8 @@
     "@types/markdown-it": "^14.2.0",
     "@types/mdast": "^4.0.4",
     "@types/sanitize-html": "^2.16.2",
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.31",
     "postcss-import": "^16.2.0",
     "postcss-nesting": "^13.0.2"
   },
@@ -80,7 +82,13 @@
   "pnpm": {
     "overrides": {
       "katex": "$katex",
-      "sharp": "$sharp"
+      "sharp": "$sharp",
+      "@swup/plugin@3.0.1>microbundle": "-",
+      "esbuild": "^0.28.2",
+      "postcss-selector-parser": "^7.1.7"
+    },
+    "patchedDependencies": {
+      "braces@3.0.3": "patches/braces@3.0.3.patch"
     }
   }
 }
