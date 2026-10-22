@@ -57,8 +57,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Check math rendering compatibility
+      - name: Check rendering compatibility and security regressions
         run: pnpm test
 
       - name: Build site and search index
         run: pnpm build
+
+      - name: Verify built pages and assets
+        run: node scripts/check-build.mjs
