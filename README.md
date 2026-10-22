@@ -53,7 +53,7 @@ A static blog template built with [Astro](https://astro.build).
 
 CIとデプロイは `.node-version` に指定したNode.js 24.22.1を使用します。これは[2026年10月21日のセキュリティ修正版](https://nodejs.org/en/blog/release/v24.22.1)です。ローカル検証も同じバージョンで `pnpm install --frozen-lockfile`、`pnpm test`、`pnpm check`、`pnpm build` を実行してください。Node.jsを更新するときは `.node-version` と `package.json` の `engines.node` の最低バージョンを合わせて更新してください。
 
-`pnpm.overrides` は、`rehype-katex` のレンダラーと読み込むKaTeX CSSのバージョン、およびAstro内部と直接依存のSharpを揃えています。更新時は数式テストと画像最適化を含むビルドを確認してください。
+`pnpm.overrides` は、`rehype-katex` のレンダラーと読み込むKaTeX CSSのバージョン、およびAstro内部と直接依存のSharpを揃えています。ビルド時はコンテンツキャッシュを再生成し、依存更新前の数式HTMLが残ることを防ぎます。更新時は数式テストと画像最適化を含むビルドを確認してください。
 
 1. `astro.config.mjs` の `site` を自分のGitHub Pages URLに変更します。
    - 例: `https://<YOUR_GITHUB_NAME>.github.io/`

@@ -7,7 +7,7 @@
     "start": "astro dev",
     "check": "astro check",
     "test": "node --test scripts/math-compatibility.test.mjs",
-    "build": "astro build && pagefind --site dist",
+    "build": "astro build --force && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
     "type-check": "tsc --noEmit --isolatedDeclarations",
