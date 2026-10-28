@@ -19,3 +19,9 @@ Before submitting code, please run the appropriate commands to check for errors 
 pnpm check
 pnpm format
 ```
+
+## Markdown formatting compatibility
+
+Biome 2.6 adds Markdown formatting, which was not part of our previous code-quality checks. In 2.6.3, formatting `src/content/posts/guide/markdown.md` changes the sibling items `carrots`, `celery`, and `lentils` into nested lists. Formatting `src/content/posts/guide/expressive-code.md` also rewrites code examples whose line numbers and exact text are referenced by highlighting and folding annotations.
+
+`biome.json` therefore disables only the Markdown formatter to preserve authored content. Markdown lint, the recommended lint preset, explicit rules, and all existing code-quality and build checks remain enabled. Before re-enabling Markdown formatting, verify frontmatter, lists, math, directives, and annotated code blocks against the site's Markdown renderer, including draft posts.
